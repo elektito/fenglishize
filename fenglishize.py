@@ -7,7 +7,7 @@ def var(prefix, rest, last_pattern):
     if len(rest) == 0:
         yield prefix
 
-    for suffix in fenglishize(rest, last_pattern):
+    for suffix in fenglishize_word(rest, last_pattern):
         yield prefix + suffix
 
 alef = 'ا'
@@ -55,7 +55,7 @@ def match(pattern, word):
             raise ValueError('Invalid pattern.')
     return all(check(p, w) for p, w in zip(pattern, word))
 
-def fenglishize(word, last_pattern=''):
+def fenglishize_word(word, last_pattern=''):
     if len(word) == 0:
         return
 
@@ -147,11 +147,14 @@ def fenglishize(word, last_pattern=''):
                         if c2 != c3 and c2 + c3 not in banned_cc:
                             yield from var(c1 + v + c2 + c3, word[4:], 'cvcc')
 
+def fenglishize(phrase):
+    result = [remove_dups(list(fenglishize_word(w))) for w in phrase.split()]
+    yield from itertools.product(*result)
+
 def main():
     print('persian> ', end='')
     persian = input()
-    result = [remove_dups(list(fenglishize(i))) for i in persian.split()]
-    for variation in itertools.product(*result):
+    for variation in fenglishize(persian):
         print(' '.join(variation))
 
 if __name__ == '__main__':
