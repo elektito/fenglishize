@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import itertools
 from collections import OrderedDict
 
 def var(prefix, rest, last_pattern):
@@ -148,8 +149,10 @@ def fenglishize(word, last_pattern=''):
 
 def main():
     print('persian> ', end='')
-    per = input()
-    print(remove_dups(list(fenglishize(per))))
+    persian = input()
+    result = [remove_dups(list(fenglishize(i))) for i in persian.split()]
+    for variation in itertools.product(*result):
+        print(' '.join(variation))
 
 if __name__ == '__main__':
     main()
