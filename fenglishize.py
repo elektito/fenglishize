@@ -18,11 +18,24 @@ consonants = 'بپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی'
 vowels = 'اوی'
 banned_cc = ['bp', 'bm', 'bv', 'by',
              'pb', 'pm', 'pv', 'py',
-             'tj', 'tch', 'tj', 'tzh', 'tsh', 't', 'th', 'ty',
-             'jp', 'jch', 'chkh', 'chsh', 'ch', 'chgh', 'chg', 'chhf', 'chy',
+             'td', 'tj', 'tch', 'tj', 'tzh', 'tsh', 't', 'th', 'ty',
+             'jp', 'jch', 'chkh', 'chsh', 'ch', 'chgh', 'chq', 'chg', 'chhf', 'chy',
              'chp', 'chj', 'chkh', 'chsh', 'ch', 'chv', 'chh', 'chy',
+             'khch', 'kh', 'khsh', 'khgh', 'khq', 'khk', 'khh', 'khy',
+             'db', 'dp', 'dt', 'dj', 'dch', 'dsh', 'd', 'dm', 'dh', 'dy',
+             'r', 'rv', 'rh', 'ry',
+             'zs', 'zsh', 'z', 'zh',
              'sz', 'ssh', 'sh', 'sy',
-             'dr']
+             'shj', 'shch', 'shr', 'shz', 'shs', 'sh', 'ashy',
+             'ghj', 'gh', 'ghk', 'ghg', 'ghh',
+             'qj', 'q', 'qk', 'qg', 'qh',
+             'kb', 'kp', 'kj', 'kch', 'kh', 'kgh', 'kq', 'kg', 'ky',
+             'gb', 'gp', 'gj', 'gch', 'gkh', 'ggh', 'gq', 'gk', 'gh', 'gy',
+             'lr', 'lh', 'ly',
+             'mj', 'mch', 'm', 'mf', 'mk', 'mv', 'my',
+             'nl', 'nm', 'ny',
+             'vb', 'vp', 'vj', 'vch', 'v', 'vgh', 'vq', 'vk', 'vg', 'vh',
+             'h', 'hy']
 
 def is_vowel(c):
     return c in vowels
