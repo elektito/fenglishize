@@ -58,6 +58,12 @@ def fenglishize(word, last_pattern=''):
     if len(word) == 0:
         return
 
+    # special case for 'va'
+    if word == vav:
+        yield 'va'
+        yield 'o'
+        return
+
     # v
     if word[0] in (alef, kolahdar):
         if not last_pattern.endswith('v'):
