@@ -101,6 +101,8 @@ def fenglishize_word(word, last_pattern=''):
     if word[0] == alef and is_consonant(word[1]):
         for c in convert_consonant(word[1]):
             yield from var('a' + c, word[2:], 'vc')
+            yield from var('e' + c, word[2:], 'vc')
+            yield from var('o' + c, word[2:], 'vc')
 
     # cv
     if match('cv', word[:2]):
