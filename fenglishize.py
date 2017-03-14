@@ -60,7 +60,7 @@ def fenglishize(word, last_pattern=''):
         return
 
     # special case for 'va'
-    if word == vav:
+    if word == vav and last_pattern == '':
         yield 'va'
         yield 'o'
         return
