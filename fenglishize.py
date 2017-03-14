@@ -134,6 +134,14 @@ def fenglishize_word(word, last_pattern=''):
     if len(word) < 3:
         return
 
+    # vcc
+    if word[0] == alef and match('vcc', word[:3]):
+        for c1 in convert_consonant(word[1]):
+            for c2 in convert_consonant(word[2]):
+                yield from var('a' + c1 + c2, word[3:], 'vc')
+                yield from var('e' + c1 + c2, word[3:], 'vc')
+                yield from var('o' + c1 + c2, word[3:], 'vc')
+
     # cvc
     if match('cvc', word[:3]):
         for c1 in convert_consonant(word[0]):
